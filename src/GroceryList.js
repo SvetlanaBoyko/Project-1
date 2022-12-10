@@ -33,8 +33,13 @@ export class GroceryList extends Component {
         li.classList.toggle('crossed');
     }
 
+    onFormSubmit(e) {
+        e.preventDefault()
+    }
+
     render() {
         return (
+        <form onSubmit={this.onFormSubmit}>
             <div>
             <div className="container">
                 <input type='text' placeholder="What do you want to buy today?"
@@ -55,6 +60,7 @@ export class GroceryList extends Component {
             <button onClick = {() => this.deleteItem()} className='btn delete'>Delete</button>
             </div>
             </div>
+            </form>
         )
     }
 }
